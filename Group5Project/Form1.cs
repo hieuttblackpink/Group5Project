@@ -14,8 +14,8 @@ namespace Group5Project
     public partial class Form1 : Form
     {
         public static DataSet dsSV = new DataSet("SVDB");
-        public static SqlConnection con = new SqlConnection(@"uid=sa;pwd=blackpink9999;
-                                                              Initial Catalog=QLSVien;Data Source=SE141080\SQLEXPRESS");
+        //public static SqlConnection con = new SqlConnection(@"uid=sa;pwd=blackpink9999;
+        //                                                      Initial Catalog=QLSVien;Data Source=SE141080\SQLEXPRESS");
 
         public Form1()
         {
