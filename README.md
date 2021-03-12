@@ -11,6 +11,6 @@
 1. [Facebook](http://facebook.com/trantronghieu9999)
 2. [Email](mailto:tronghieu6666@gmail.com)
 
-![Practice CI with GitHub Actions using Ant and JUnit | © 2020 by hieutt](https://github.com/hieuttblackpink/math-util/workflows/Practice%20CI%20with%20GitHub%20Actions%20using%20Ant%20and%20JUnit%20%7C%20%C2%A9%202020%20by%20hieutt/badge.svg)
+![Practice CI with GitHub Actions using NUnit | © 2020 by hieutt](https://github.com/hieuttblackpink/math-util/workflows/Practice%20CI%20with%20GitHub%20Actions%20using%20Ant%20and%20JUnit%20%7C%20%C2%A9%202020%20by%20hieutt/badge.svg)
 
 #### © 2020 by hieutt
