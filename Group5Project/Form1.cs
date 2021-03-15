@@ -14,6 +14,7 @@ namespace Group5Project
     public partial class Form1 : Form
     {
         public static DataSet dsSV = new DataSet("SVDB");
+        private List<SVDTO> listSV = new List<SVDTO>();
         //public static SqlConnection con = new SqlConnection(@"uid=sa;pwd=blackpink9999;
         //                                                      Initial Catalog=QLSVien;Data Source=SE141080\SQLEXPRESS");
 
@@ -35,6 +36,17 @@ namespace Group5Project
             for (int i = 0; i < dsSV.Tables["SVIEN"].Rows.Count; i++)
             {
                 listMSSV.Items.Add(dsSV.Tables["SVIEN"].Rows[i]["MASV"]);
+
+                int maSV = Int32.Parse(dsSV.Tables["SVIEN"].Rows[i]["MASV"].ToString());
+                string hoSV = dsSV.Tables["SVIEN"].Rows[i]["HOSV"].ToString();
+                string tenSV = dsSV.Tables["SVIEN"].Rows[i]["TEN"].ToString();
+                int nam = Int32.Parse(dsSV.Tables["SVIEN"].Rows[i]["NAM"].ToString());
+                string ngaySinh = dsSV.Tables["SVIEN"].Rows[i]["NGAYSINH"].ToString();
+                string gioiTinh = dsSV.Tables["SVIEN"].Rows[i]["GIOITINH"].ToString();
+                string maKhoa = dsSV.Tables["SVIEN"].Rows[i]["MAKH"].ToString();
+
+                SVDTO svDTO = new SVDTO(maSV, hoSV, tenSV, nam, ngaySinh, gioiTinh, maKhoa);
+                listSV.Add(svDTO);
             }
 
             listMSSV.SelectedIndex = 0;
@@ -51,15 +63,15 @@ namespace Group5Project
 
             bool foundSV = false;
 
-            for (int i = 0; i < dsSV.Tables["SVIEN"].Rows.Count; i++)
+            for (int i = 0; i < listSV.Count; i++)
             {
-                if (findMSV.Equals(dsSV.Tables["SVIEN"].Rows[i]["MASV"].ToString()))
+                if (findMSV.Equals(listSV[i].MaSV.ToString()))
                 {
-                    txtHo.Text = dsSV.Tables["SVIEN"].Rows[i]["HOSV"].ToString();
-                    txtTen.Text = dsSV.Tables["SVIEN"].Rows[i]["TEN"].ToString();
-                    txtNgaysinh.Text = dsSV.Tables["SVIEN"].Rows[i]["NGAYSINH"].ToString();
-                    txtGioitinh.Text = dsSV.Tables["SVIEN"].Rows[i]["GIOITINH"].ToString();
-                    txtMakhoa.Text = dsSV.Tables["SVIEN"].Rows[i]["MAKH"].ToString();
+                    txtHo.Text = listSV[i].HoSV;
+                    txtTen.Text = listSV[i].TenSV;
+                    txtNgaysinh.Text = listSV[i].NgaySinh;
+                    txtGioitinh.Text = listSV[i].GioiTinh;
+                    txtMakhoa.Text = listSV[i].MaKhoa;
                     foundSV = true;
                     break;
                 }
