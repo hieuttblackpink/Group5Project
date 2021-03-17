@@ -107,6 +107,11 @@ namespace Group5Project
             txtMakhoa.ReadOnly = true;
             txtDiemtb.ReadOnly = true;
 
+            calAverageMark(findMSV);
+        }
+
+        private void calAverageMark (string findMSV)
+        {
             string str = @"uid=sa;pwd=blackpink9999;Initial Catalog=QLSVien;Data Source=SE141080\SQLEXPRESS";
 
             string sql = string.Format("SELECT t.MAMH AS 'MÃ MH', m.TENMH AS 'TÊN MN', t.DIEM AS 'ĐIỂM' "
@@ -123,7 +128,7 @@ namespace Group5Project
             {
                 dsSV.Tables.Remove("MHOC");
             }
-            
+
             dataAdapter.Fill(dsSV, "MHOC");
             dataAdapter.Update(dsSV.Tables["MHOC"]);
 
@@ -150,7 +155,6 @@ namespace Group5Project
             {
                 txtDiemtb.Text = averageMark.ToString();
             }
-            
         }
     }
 }
